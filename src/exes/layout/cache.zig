@@ -968,7 +968,6 @@ fn loadPage(
                                             "/",
                                             site._meta.url_path_prefix,
                                             alt.output,
-                                            "/",
                                         });
                                         break :blk context.String.init(abs);
                                     }
