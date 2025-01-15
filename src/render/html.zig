@@ -94,7 +94,7 @@ pub fn html(
                             }
                             open_div = true;
                             try w.print("<div", .{});
-                            if (d.id) |id| try w.print(" id={s}", .{id});
+                            if (d.id) |id| try w.print(" id=\"{s}\"", .{id});
                             if (d.attrs) |attrs| {
                                 try w.print(" class=\"", .{});
                                 for (attrs) |attr| try w.print("{s} ", .{attr});
@@ -127,7 +127,7 @@ pub fn html(
                         else => {},
                         .heading => {
                             try w.print("<h{}", .{node.headingLevel()});
-                            try w.print(" id={s}", .{d.id.?});
+                            try w.print(" id=\"{s}\"", .{d.id.?});
                             if (d.attrs) |attrs| {
                                 try w.print(" class=\"", .{});
                                 for (attrs) |attr| try w.print("{s} ", .{attr});
@@ -143,7 +143,7 @@ pub fn html(
                             }
                             open_div = true;
                             try w.print("<div", .{});
-                            try w.print(" id={s}", .{d.id.?});
+                            try w.print(" id=\"{s}\"", .{d.id.?});
                             if (d.attrs) |attrs| {
                                 try w.print(" class=\"", .{});
                                 for (attrs) |attr| try w.print("{s} ", .{attr});
