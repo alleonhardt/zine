@@ -41,7 +41,7 @@ pub fn html(
                     };
 
                     try w.print("<div", .{});
-                    if (d.id) |id| try w.print(" id={s}", .{id});
+                    if (d.id) |id| try w.print(" id=\"{s}\"", .{id});
                     try w.print(" class=\"block", .{});
                     if (d.attrs) |attrs| {
                         for (attrs) |attr| try w.print(" {s}", .{attr});
